@@ -1,0 +1,311 @@
+*{
+    padding: 0;
+    scroll-behavior: smooth;
+    margin: 0;
+}
+:root{
+    --bg:#f5f5f5;
+    --fg:blue;
+    --sh:hsla(0, 0%, 0%, 0.144);
+    --accent:orangered;
+    --black:black;
+    --surface:rgba(211, 89, 18, 0.548);
+    --border:rgba(9, 65, 250, 0.199);
+}
+body{
+    height: 100vh;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    user-select: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: auto;
+}
+main{
+    width: 100%;
+    height: calc(100% - 40px);
+    gap: 1rem;
+    display: flex;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    color: var(--fg);
+    align-items: center;
+    height: 40px;
+    box-shadow: 2px 2px var(--sh);
+    border-radius: 4px;
+}
+header img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+main .left-nav {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    gap: 10px;
+    height: 100%;
+    justify-content: space-between;
+    border-radius: 4px;
+    background-color: var(--fg);
+}
+main .left-nav nav{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+main .left-nav a{
+    color: var(--bg);
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 7px;
+    text-transform: uppercase;
+    margin: 7px;
+}
+main .left-nav a:hover{
+    color: var(--fg);
+    border-radius: 2px;
+    background-color: var(--bg);
+    transition: 1s;
+}
+main .admin{
+  width: 100%;
+  padding-top: 7px;
+  border: 3px solid var(--bg);
+  display: flex;
+  gap: 2%;
+  align-items: center;
+}
+main .admin img{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.admin .name{
+  color: var(--bg);
+  
+}
+#interface{
+    overflow-y: scroll;
+    flex: 1;
+}
+#interface::-webkit-scrollbar{
+    display: none;
+}
+ #analytics,
+ #messages,
+ #users,
+ #users {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--fg);
+ }
+ #analytics h2,
+ #messages h2,
+ #users h2,
+ #vendors h2,
+ #prducts h2{
+    color: var(--black);
+    text-align: center;
+
+ }
+ #analytics .analyticContainer ,
+ .messagesContainer{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+ }
+ .analyticContainer .analyticCards{
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top:15px ;
+    background-color: var(--border);
+    border-radius: 4px;
+    height: 75px;
+ }
+ .analyticCards:hover{
+    border:1px solid var(--surface) ;
+    transition: .4s;
+ }
+ .messagesCard{
+    width: 270px;
+    padding: 5px;
+    
+    box-shadow: 4px 4px var(--sh);
+    border-radius: 4px;
+ }
+ .messagesCard .top{
+    width: 100%;
+    border-radius: 4px;
+    height: 25px;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--fg);
+    color: var(--bg);
+ }
+ .messagesCard .message{
+height: 150px;
+    overflow-y: scroll;
+    color: var(--black);
+ }
+ .messagesCard .message::-webkit-scrollbar{
+    width: 0;
+ }
+ .messagesCard .bottom button{
+   width: 100%;
+   background-color: var(--fg);
+   color: var(--bg);
+   height: 25px;
+   border-radius: 4px;
+   border: none;
+   font-weight: 800;
+ }
+  .messagesCard .bottom h5{
+    display: none;
+  }
+  .vitals{
+    display: flex;
+    width:100%;
+    justify-content: space-around;
+  }
+  .usersContainer,
+  .vendorContainer,
+  .productsContainer{
+    display: flex;
+    margin-top: 2rem;
+    flex-direction: column;
+    height: 300px;
+    border-radius: 4px;
+    overflow-y: scroll;
+    width: 100%;
+    background-color: var(--surface);
+  }
+  .vendorContainer{
+    background-color: var(--border);
+  }
+   .messagesContainer::-webkit-scrollbar,
+ .usersContainer::-webkit-scrollbar,
+  .vendorContainer::-webkit-scrollbar,
+  .productsContainer::-webkit-scrollbar{
+    display: none;
+
+  }
+  .usersContainer .user,
+  .vendorContainer .vendor,
+  .productsContainer .product
+  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: var(--accent);
+    text-align: left;
+    color: var(--bg);
+  }
+  .vendorContainer .vendor{
+    background-color: var(--fg);
+  }
+.vendor button{
+  background-color: var(--bg);
+  color: var(--black);
+  border: none;
+  border-radius: 2px;
+  margin-right: 7px;
+  padding: 4px;
+}
+article{
+    display: none;
+}
+/*At Media Screen*/
+@media screen and (max-width:768px){
+  main .left-nav{
+display: none;
+   }
+   .messagesCard{
+    width: 90%;
+   }
+   .messagesCard .message{
+    height: 50px;
+   }
+   .messagesCard .top {
+    display: none;
+   }
+    .messagesCard .bottom{
+   width: 100%;
+   margin: 2px;
+   color: var(--fg);
+   justify-content: space-around;
+   align-items: center;
+   display: flex;
+   border-radius: 4px;
+   border: none;
+   height: 100%;
+   font-weight: 800;
+ }
+  .messagesCard .bottom h5{
+    display: block;
+  }
+ .messagesCard .bottom  button{
+    background-color: var(--fg);
+   width: 50px;
+ }
+  article{
+        bottom: 0;
+        z-index: 1000;
+        position: sticky;
+        border-radius: 4px;
+        height: 40px;
+        display: block;
+        box-shadow: 2px 2px var(--sh);
+        background-color: var(--fg);
+    }
+    article nav {
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+    }
+    article nav a{
+      color: var(--bg);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+}
+ @media  screen and (max-width:400px) {
+        header h1{
+            font-size: 24px;
+        }
+    }
+@media screen and (min-width:1380px){
+   *{
+    font-size: 24px;
+
+   }
+   header h1{
+    font-size: 48px;
+   }
+   main .admin img{
+    width: 50px;
+    height: 50px;
+   }
+   .messagesCard{
+    width: 450px;
+   }
+}
